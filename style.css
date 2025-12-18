@@ -1,0 +1,203 @@
+:root {
+    --primary: #3a2c75;
+    --secondary: #f2f0fa;
+    --accent: #f4b400;
+}
+
+/* COMMON */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--secondary);
+}
+
+/* INTRO PAGE */
+.intro-body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-center {
+    text-align: center;
+}
+
+.logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.launch-btn {
+    position: absolute;
+    bottom: 40px;
+    padding: 14px 50px;
+    border: none;
+    border-radius: 30px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* LAUNCH PAGE */
+.launch-body {
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+.launch-container {
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
+}
+
+.logo.small {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.book-title {
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+/* BOOK + CURTAINS */
+.book-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    margin-bottom: 60px;
+}
+
+.book-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), #2d1f5c);
+    transition: transform 1.8s ease-in-out;
+}
+
+.curtain.left { left: 0; }
+.curtain.right { right: 0; }
+
+.curtain.open.left { transform: translateX(-100%); }
+.curtain.open.right { transform: translateX(100%); }
+
+/* THANK YOU CARD */
+.thank-you {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    animation: float 3s ease-in-out infinite;
+}
+
+.thank-you h2 {
+    color: var(--primary);
+}
+
+.publisher {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.field {
+    margin: 12px 0;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3a2c75;
+    margin-bottom: 4px;
+}
+
+.field .value {
+    font-size: 15px;
+    line-height: 1.4;
+    padding-bottom: 6px;
+
+    /* underline look */
+    border-bottom: 2px solid rgba(58, 44, 117, 0.3);
+
+    /* IMPORTANT FIX */
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ANIMATIONS */
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.message-block {
+    margin-top: 12px;
+}
+
+.message-block label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #3a2c75;
+}
+
+.message-block p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+
+    /* IMPORTANT FIXES */
+    max-height: 120px;        /* limits vertical size */
+    overflow-y: auto;         /* scroll if text is long */
+    padding-right: 6px;
+}
+/* Launcher image in thank you card */
+.launcher-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.launcher-photo img {
+    width: 120px;        /* increased size */
+    height: 120px;       /* increased size */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #3a2c75;  /* slightly thicker border */
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Message handling */
+.field.message-block .value {
+    font-size: 14px;
+    line-height: 1.5;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+/* Optional scrollbar styling */
+.field.message-block .value::-webkit-scrollbar {
+    width: 4px;
+}
+
+.field.message-block .value::-webkit-scrollbar-thumb {
+    background: #c6c2e3;
+    border-radius: 10px;
+}
+
